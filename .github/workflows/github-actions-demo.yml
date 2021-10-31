@@ -3,8 +3,6 @@ on:
   push:
     tags:
       - "v*"
-    branches:
-      - master
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
