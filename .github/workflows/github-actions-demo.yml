@@ -35,7 +35,7 @@ jobs:
           docker version
 
       - name: Docker build
-        run: sh ./.github/scripts/createTicket.sh
+        run: sh ./.github/scripts/dockerBuild.sh
         env:
           TRACKER_OAUTH: ${{ secrets.TRACKER_OAUTH }}
           TRACKER_ORGID: ${{ secrets.TRACKER_ORGID }}
