@@ -12,12 +12,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Create ticket
-        run: sh ./.github/scripts/createTicket.sh
-        env:
-          TRACKER_OAUTH: ${{ secrets.TRACKER_OAUTH }}
-          TRACKER_ORGID: ${{ secrets.TRACKER_ORGID }}
-          REPO_NAME: ${{ secrets.REPO_NAME }}
+      # - name: Create ticket
+      #   run: sh ./.github/scripts/createTicket.sh
+      #   env:
+      #     TRACKER_OAUTH: ${{ secrets.TRACKER_OAUTH }}
+      #     TRACKER_ORGID: ${{ secrets.TRACKER_ORGID }}
+      #     REPO_NAME: ${{ secrets.REPO_NAME }}
 
       - uses: actions/setup-node@v2
         with:
