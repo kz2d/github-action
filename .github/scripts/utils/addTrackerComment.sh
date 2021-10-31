@@ -5,7 +5,14 @@ echo "adding comment"
     "text": "'"$1"'"
 }'
 
-RESPONSE=$(curl -X POST https://api.tracker.yandex.net/v2/issues/TMP-267/comments \
+TRACKER_ID=$(curl -X POST https://api.tracker.yandex.net/v2/issues/_search \
+    -H "Authorization: OAuth $TRACKER_OAUTH" \
+    -H "X-Org-ID: $TRACKER_ORGID" \
+    -H "Content-Type: application/json" \
+    --data-raw '{"filter":{"unique":"lol"}}' |  ./.github/scripts/utils/jq -r '.[].key')
+    echo $RESPONSE
+
+RESPONSE=$(curl -X POST "https://api.tracker.yandex.net/v2/issues/${TRACKER_ID}/comments" \
     -H "Authorization: OAuth AQAAAABG5oZkAAd4-c20vI6vNUd_sYRnDm2DSvU" \
     -H "X-Org-ID: 6461097" \
     -H "Content-Type: application/json" \
