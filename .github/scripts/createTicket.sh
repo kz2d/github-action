@@ -8,7 +8,7 @@ CHANGELOG=$(git log ${PREV_TAG}..${LAST_TAG} --pretty=format:"%h - %s, %ad\n" )
 SUMMARY="Realis for ${LAST_TAG} in "
 UNIQUE="$REPO_NAME/$LAST_TAG"
 #TODO ${CHANGELOG}
-DESCRIPTION=" ${LAST_TAG}\n ${AUTHOR}\n${DATE}\nchangelog:\n"
+DESCRIPTION=" ${LAST_TAG}\n ${AUTHOR}\n${DATE}\nchangelog:\n$CHANGELOG"
 echo $SUMMARY
 echo $DESCRIPTION
 echo $UNIQUE

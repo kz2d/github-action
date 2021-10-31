@@ -8,4 +8,4 @@ docker build . -t "$LAST_TAG/$HASH"
 IS_DONE=$(echo $?)
 COMMENT="docker build complited"
 
-./.github/scripts/utils/addTrackerComment.sh $COMMENT
+./.github/scripts/utils/addTrackerComment.sh "$COMMENT"
