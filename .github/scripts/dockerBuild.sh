@@ -6,6 +6,6 @@ HASH=$(git show -s --format='%h' ${LAST_TAG})
 
 docker build . -t "$LAST_TAG/$HASH"
 IS_DONE=$(echo $?)
-COMMENT="docker build complited"
+COMMENT="docker build complited $LAST_TAG/$HASH"
 
 ./.github/scripts/utils/addTrackerComment.sh "$COMMENT"
