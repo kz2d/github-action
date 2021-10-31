@@ -1,7 +1,7 @@
 # !/bin/bash
 
 LAST_TAG=$(git tag -l | tac | head -n1)  
-git checkout $LAST_TAG
+# git checkout $LAST_TAG
 npm run build
 
 CI=true
