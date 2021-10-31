@@ -1,16 +1,14 @@
 # !/bin/bash
 
 echo "adding comment"
- '{
-    "text": "'"$1"'"
-}'
+
 
 TRACKER_ID=$(curl -X POST https://api.tracker.yandex.net/v2/issues/_search \
     -H "Authorization: OAuth $TRACKER_OAUTH" \
     -H "X-Org-ID: $TRACKER_ORGID" \
     -H "Content-Type: application/json" \
     --data-raw '{"filter":{"unique":"lol"}}' |  ./.github/scripts/utils/jq -r '.[].key')
-    echo $RESPONSE
+    echo $TRACKER_ID
 
 RESPONSE=$(curl -X POST "https://api.tracker.yandex.net/v2/issues/${TRACKER_ID}/comments" \
     -H "Authorization: OAuth AQAAAABG5oZkAAd4-c20vI6vNUd_sYRnDm2DSvU" \
