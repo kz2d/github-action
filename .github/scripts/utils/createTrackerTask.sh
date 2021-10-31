@@ -50,8 +50,8 @@ UPDATE_RESPONSE_CODE=$(echo $UPDATE_RESPONSE|./.github/scripts/utils/jq -r ".sta
     elif [ ${UPDATE_RESPONSE_CODE} = 404 ]; then
       echo "wrong user oAuth"
       exit 1
-    else 
-      echo "Something went wrong ${UPDATE_RESPONSE}"
-      exit 1
+    # else 
+    #   echo "Something went wrong ${UPDATE_RESPONSE}"
+    #   exit 1
     fi
 fi
