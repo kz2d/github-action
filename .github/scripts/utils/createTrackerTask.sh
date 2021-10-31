@@ -12,7 +12,9 @@ RESPONSE=$(curl -X POST https://api.tracker.yandex.net/v2/issues/ \
     "description": "'"$2"'",
     "unique": "'"$3"'",
     "queue": "TMP"
-}'|  ./.github/scripts/utils/jq -r ".statusCode")
+}')
+# |  ./.github/scripts/utils/jq -r ".statusCode
+echo $RESPONSE
 echo $RESPONSE
 if [ $RESPONSE = 201 ]; then
   echo "ticket created "
