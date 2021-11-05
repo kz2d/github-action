@@ -1,7 +1,7 @@
 # !/bin/bash
 
 LAST_TAG=$(git tag -l | tac | head -n1)  
-# git checkout $LAST_TAG
+git checkout $LAST_TAG
 HASH=$(git show -s --format='%h' ${LAST_TAG})
 
 docker build . -t "$LAST_TAG/$HASH"
