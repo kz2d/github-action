@@ -12,6 +12,6 @@ DESCRIPTION=" ${LAST_TAG}\n ${AUTHOR}\n${DATE}\nchangelog:\n$CHANGELOG"
 echo $SUMMARY
 echo $DESCRIPTION
 echo $UNIQUE
-
+ 
 ./.github/scripts/utils/createTrackerTask.sh "$SUMMARY" "$DESCRIPTION" "$UNIQUE"
 
